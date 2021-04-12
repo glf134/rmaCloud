@@ -1,0 +1,27 @@
+//授权码模式
+http://localhost:11093/oauth/authorize?client_id=c1&response_type=code&scope=ROLE_API&redirect_uri=http://www.baidu.com
+
+根据返回的授权码 code   请求下面地址返回token
+http://localhost:11093/oauth/token?client_id=c1&client_secret=123&grant_type=authorization_code&code=35f4YS&redirect_uri=http://www.baidu.com
+
+//授权码简化模式  通过重定向地址 把token拼接进去
+http://localhost:11093/oauth/authorize?client_id=c1&response_type=token&scope=ROLE_API&redirect_uri=http://www.baidu.com
+ 
+//密码模式
+http://localhost:11093/oauth/token?client_id=c1&client_secret=secret&grant_type=password&username=glf&password=123
+//客户端详情模式
+http://localhost:11093/oauth/token?client_id=c1&client_secret=secret&grant_type=client_credentials&username=glf&password=123
+
+
+spring:
+    cloud:
+        nacos:
+          config:
+            server-addr: 192.168.231.141:8848    # nacos server地址
+            namespace: 0f5b0bab-155d-4ba9-97a9-c97182571811  #命名空间 代指某个环境
+            # group: 默认组
+            # prefix: 默认
+            file-extension: yaml                # dataId扩展名
+          discovery:
+            server-addr: 192.168.231.141:8848
+            namespace: 0f5b0bab-155d-4ba9-97a9-c97182571811  #命名空间 代指某个环境
