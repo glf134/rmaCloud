@@ -65,13 +65,13 @@ public class mybatisgenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://192.168.231.141:3306/mem-parent?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://192.168.0.95:3306/rma_db?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
         mpg.setDataSource(dsc);
-        String packstart="com.rma.system";
+        String packstart="com.rma.tes";
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent(packstart);
@@ -105,7 +105,7 @@ public class mybatisgenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/java/com/rma/system/dao"  //生成xml路径
+                return projectPath + "/src/main/java/com/rma/tes/dao"  //生成xml路径
                         + "/" + tableInfo.getEntityName() + "Dao" + StringPool.DOT_XML;
             }
         });
@@ -138,12 +138,12 @@ public class mybatisgenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
+//        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         strategy.setEntityTableFieldAnnotationEnable(true); // 生成实体类字段注解
         // 公共父类
-        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
+//        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
         // 写于父类中的公共字段
         strategy.setSuperEntityColumns("id");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));

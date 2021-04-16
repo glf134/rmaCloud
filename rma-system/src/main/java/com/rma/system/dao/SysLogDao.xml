@@ -17,4 +17,9 @@
         id, username, module, params, create_time, flag, remark
     </sql>
 
+
+    <select id="selectPageBySysLog" resultType="com.rma.system.vo.SysLog">
+        SELECT id, username, module, params, create_time, flag, remark FROM sys_log
+    </select>
+
 </mapper>

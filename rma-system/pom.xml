@@ -93,7 +93,7 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
         <!-- SEATA -->
-       <dependency>
+       <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-seata</artifactId>
             <version>2.2.0.RELEASE</version>
@@ -108,7 +108,7 @@
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>
             <version>1.2.0</version>
-        </dependency>
+        </dependency>-->
         <!-- LCN -->
      <!--   <dependency>
             <groupId>com.codingapi.txlcn</groupId>

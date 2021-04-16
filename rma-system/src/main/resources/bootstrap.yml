@@ -3,28 +3,34 @@ spring:
     active: dev
   application:
     name: rma-system
-seata:
-  enabled: true
-  application-id: storage
-  tx-service-group: my_test_tx_group      #事务组
-  enable-auto-data-source-proxy: true
-  config:
-    type: nacos
-    nacos:
-      namespace: 0f5b0bab-155d-4ba9-97a9-c97182571811
-      serverAddr: 192.168.231.141:8848
-      group: SEATA_GROUP
-      username: nacos
-      password: nacos
-  registry:
-    type: nacos
-    nacos:
-      application: seata-server
-      server-addr: 192.168.231.141:8848
-      group: SEATA_GROUP
-      namespace: 0f5b0bab-155d-4ba9-97a9-c97182571811
-      username: nacos
-      password: nacos
+rma:
+  tenant:
+    tables:
+      - breakDown
+      - alarm
+      - sys_log
+#seata:
+#  enabled: true
+#  application-id: storage
+#  tx-service-group: my_test_tx_group      #事务组
+#  enable-auto-data-source-proxy: true
+#  config:
+#    type: nacos
+#    nacos:
+#      namespace: 0f5b0bab-155d-4ba9-97a9-c97182571811
+#      serverAddr: 192.168.231.141:8848
+#      group: SEATA_GROUP
+#      username: nacos
+#      password: nacos
+#  registry:
+#    type: nacos
+#    nacos:
+#      application: seata-server
+#      server-addr: 192.168.231.141:8848
+#      group: SEATA_GROUP
+#      namespace: 0f5b0bab-155d-4ba9-97a9-c97182571811
+#      username: nacos
+#      password: nacos
 
 ---
 spring:

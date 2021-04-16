@@ -6,7 +6,7 @@ spring:
 
 seata:
   enabled: true
-  application-id: storage
+  application-id: ${spring.application.name}
   tx-service-group: my_test_tx_group      #事务组
   enable-auto-data-source-proxy: true
   config:
