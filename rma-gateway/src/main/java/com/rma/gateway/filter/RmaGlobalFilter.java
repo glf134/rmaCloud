@@ -15,7 +15,6 @@ public class RmaGlobalFilter implements GlobalFilter, Ordered{
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         log.info("网关全局过滤器-前置");
-
         return chain.filter(exchange).then(Mono.fromRunnable(() ->
         {
             log.info("网关全局过滤器-后置");
